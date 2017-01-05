@@ -18,10 +18,29 @@ namespace AutomationHelpers
 
                 return null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {                
                 throw;
             }            
-        }        
+        }
+
+        public static ValuePattern GetValuePattern(AutomationElement element)
+        {
+            try
+            {
+                if (element != null)
+                {
+                    ValuePattern pattern;
+                    pattern = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
+                    return pattern;
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

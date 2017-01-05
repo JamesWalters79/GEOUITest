@@ -11,6 +11,7 @@ namespace GEOTests
         [TestFixtureSetUp]
         public void StartGEO()
         {
+            GEOLauncher.CloseAllGEOInstances();
             isLaunched = GEOLauncher.LaunchGEO();           
             LogIn.Ok();
         }
@@ -43,6 +44,13 @@ namespace GEOTests
         public void AppWindowIsVisible()
         {
             Assert.IsTrue(GEOLauncher.IsVisible);
+        }
+
+        [Test]
+        public void OpenFile()
+        {
+            GEOFile.OpenGeoDocument(@"C:\Users\wal59811\test.geo");
+            Assert.AreEqual("UMTS_Ericsson_AirTelIndia_0014 - test.geo - ariesoGEO", GEOLauncher.WindowTitle);
         }
     }
 }

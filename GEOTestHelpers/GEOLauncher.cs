@@ -35,6 +35,14 @@ namespace GEOHelpers
             }
         }
 
+        public static AutomationElement AutomationElement
+        {
+            get
+            {
+                return ElementFinder.GetParentAutomationElement(ElementFinder.GetElementbyAutomationId("HomeRibbonTab"));
+            }
+        }
+
         public static bool IsVisible
         {
             get
