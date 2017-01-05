@@ -1,0 +1,5 @@
+*.dll
+*.pdb
+obj
+bin
+NUnit-2.6.3

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationHelpers", "AutomationHelpers\AutomationHelpers.csproj", "{33D49685-DE3F-49CF-B8E9-E3E0CF3A382D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEOHelpers", "GEOTestHelpers\GEOHelpers.csproj", "{CF400C47-EB7D-40A0-B208-AA24E39390B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEOTests", "GEOTests\GEOTests.csproj", "{91E55428-26F4-48B6-9E45-9C88732CD46A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33D49685-DE3F-49CF-B8E9-E3E0CF3A382D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D49685-DE3F-49CF-B8E9-E3E0CF3A382D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D49685-DE3F-49CF-B8E9-E3E0CF3A382D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D49685-DE3F-49CF-B8E9-E3E0CF3A382D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF400C47-EB7D-40A0-B208-AA24E39390B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF400C47-EB7D-40A0-B208-AA24E39390B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF400C47-EB7D-40A0-B208-AA24E39390B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF400C47-EB7D-40A0-B208-AA24E39390B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E55428-26F4-48B6-9E45-9C88732CD46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E55428-26F4-48B6-9E45-9C88732CD46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E55428-26F4-48B6-9E45-9C88732CD46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E55428-26F4-48B6-9E45-9C88732CD46A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
