@@ -49,6 +49,21 @@ namespace AutomationHelpers
                 throw;
             }
         }
+        public static void MoveToAndClick(AutomationElement element)
+        {
+            try
+            {
+                Rect rect = element.Current.BoundingRectangle;
+                Mouse.MoveTo(new System.Drawing.Point((int)rect.Left + 10, (int)rect.Bottom - 10));
+                Thread.Sleep(500);
+                Mouse.Click(MouseButton.Left);
+                Thread.Sleep(500);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
 
     }
