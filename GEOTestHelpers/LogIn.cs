@@ -4,7 +4,10 @@
     {
         public static void Ok()
         {
-            AutomationHelpers.ElementInteract.InvokeElement("GeoAreaLogInButton", AutomationHelpers.ElementFinder.GetElementbyName("ariesoGEO Log In"));            
+            if (IsOpen == true)
+            {
+                AutomationHelpers.ElementInteract.InvokeElement("GeoAreaLogInButton", AutomationHelpers.ElementFinder.GetElementbyName("ariesoGEO Log In"));
+            }            
         }
         public static bool IsOpen
         {
