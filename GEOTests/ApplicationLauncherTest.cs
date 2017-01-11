@@ -39,7 +39,7 @@ namespace GEOTests
         [Test]
         public void WindowTitleSet()
         {
-            Assert.AreEqual("UMTS_Ericsson_AirTelIndia_0014 - Document1 - ariesoGEO", GEOLauncher.WindowTitle);
+            Assert.AreEqual("GSM_Ericsson_MTN_GEBSC2_0001 - Document1 - ariesoGEO", GEOLauncher.WindowTitle);
         }
 
         [Test]
@@ -51,8 +51,8 @@ namespace GEOTests
         [Test]
         public void OpenFile()
         {
-            GEOFile.OpenGeoDocument(@"C:\Users\wal59811\test.geo");
-            Assert.AreEqual("UMTS_Ericsson_AirTelIndia_0014 - test.geo - ariesoGEO", GEOLauncher.WindowTitle);
+            GEOFile.OpenGeoDocument(@"C:\test.geo");
+            Assert.AreEqual("GSM_Ericsson_MTN_GEBSC2_0001 - test.geo - ariesoGEO", GEOLauncher.WindowTitle);
         }
     }
 }

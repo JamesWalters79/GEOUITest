@@ -50,5 +50,13 @@ namespace GEOHelpers
                 return !ElementFinder.GetParentAutomationElement(ElementFinder.GetElementbyAutomationId("HomeRibbonTab")).Current.IsOffscreen;
             }
         }
+
+        public static bool IsRunning
+        {
+            get
+            {
+                return Launcher.IsRunning(exeName);
+            }
+        }
     }
 }

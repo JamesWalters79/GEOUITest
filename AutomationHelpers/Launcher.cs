@@ -37,5 +37,22 @@ namespace AutomationHelpers
             }         
         }
 
+        public static bool IsRunning(string exeName)
+        {
+            try
+            {
+                foreach (Process exe in Process.GetProcessesByName(exeName))
+                {
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }
