@@ -37,12 +37,6 @@ namespace GEOTests
         }
 
         [Test]
-        public void WindowTitleSet()
-        {
-            Assert.AreEqual("GSM_Ericsson_MTN_GEBSC2_0001 - Document1 - ariesoGEO", GEOLauncher.WindowTitle);
-        }
-
-        [Test]
         public void AppWindowIsVisible()
         {
             Assert.IsTrue(GEOLauncher.IsVisible);
