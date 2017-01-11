@@ -29,7 +29,7 @@ namespace AutomationHelpers
         public static AutomationElement GetElementbyName(string name, AutomationElement rootElement = null, int waitForSeconds = 10)
         {
 
-            Console.WriteLine("GetElementbyName " + DateTime.Now.ToLongTimeString() + " " + name);
+            Console.WriteLine("GetElementbyName Start " + DateTime.Now.ToLongTimeString() + " " + name);
 
             AutomationElement foundElement;
             foundElement = null;
@@ -54,7 +54,7 @@ namespace AutomationHelpers
                         {
                             foundElement = element;
 
-                            Console.WriteLine("GetElementbyName " + DateTime.Now.ToLongTimeString());
+                            Console.WriteLine("GetElementbyName Exit Found " + DateTime.Now.ToLongTimeString());
 
                             return foundElement;
                         }
@@ -69,14 +69,14 @@ namespace AutomationHelpers
 
             } while (count < waitForSeconds);
 
-            Console.WriteLine("GetElementbyName " + DateTime.Now.ToLongTimeString());
+            Console.WriteLine("GetElementbyName Exit" + DateTime.Now.ToLongTimeString());
 
             return foundElement;
         }
 
         public static AutomationElement GetElementbyAutomationId(string automationID, AutomationElement rootElement = null, int waitForSeconds = 10)
         {
-            Console.WriteLine("GetElementbyAutomationId " + DateTime.Now.ToLongTimeString() + " " + automationID);
+            Console.WriteLine("GetElementbyAutomationId Start " + DateTime.Now.ToLongTimeString() + " " + automationID);
 
             AutomationElement foundElement;
             foundElement = null;
@@ -101,7 +101,7 @@ namespace AutomationHelpers
                         {
                             foundElement = element;
 
-                            Console.WriteLine("GetElementbyAutomationId " + DateTime.Now.ToLongTimeString());
+                            Console.WriteLine("GetElementbyAutomationId Exit Found" + DateTime.Now.ToLongTimeString());
 
                             return foundElement;
                         }
