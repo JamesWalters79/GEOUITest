@@ -13,8 +13,7 @@ namespace GEOTests
         public void StartGEO()
         {
             GEOLauncher.CloseAllGEOInstances();
-            GEOLauncher.LaunchGEO();           
-            LogIn.Ok();
+            GEOLauncher.LaunchGEO();
         }
 
         [TestFixtureTearDown]
