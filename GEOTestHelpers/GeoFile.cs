@@ -13,6 +13,7 @@ namespace GEOHelpers
             ElementInteract.InvokeElement("OpenDocumentButton", GEOLauncher.AutomationElement);
             ElementInteract.SetTextValue("1148", AutomationElement, fullPath);
             ElementInteract.InvokeElement("Open", AutomationElement);
+            Thread.Sleep(2000);
         }
 
         public static AutomationElement AutomationElement
