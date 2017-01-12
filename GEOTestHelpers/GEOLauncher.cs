@@ -11,15 +11,9 @@ namespace GEOHelpers
         private static string exeName = "ariesoGeo";
         
 
-        public static bool LaunchGEO()
+        public static void LaunchGEO()
         {
-            Launcher.LaunchExecutable(fullPath);
-
-            if (ElementFinder.GetElementbyName("ariesoGEO Log In") != null)
-            {
-                return true;
-            }
-            return false;          
+            Launcher.LaunchExecutable(fullPath);        
         }
 
         public static void CloseAllGEOInstances()

@@ -8,13 +8,12 @@ namespace GEOTests
     [TestFixture]
     public class ApplicationLauncherTest
     {
-        private static bool isLaunched ;
         
         [TestFixtureSetUp]
         public void StartGEO()
         {
             GEOLauncher.CloseAllGEOInstances();
-            isLaunched = GEOLauncher.LaunchGEO();           
+            GEOLauncher.LaunchGEO();           
             LogIn.Ok();
         }
 
@@ -27,7 +26,7 @@ namespace GEOTests
         [Test]
         public void Launched()
         {
-            Assert.IsTrue(isLaunched);
+            Assert.IsTrue(GEOLauncher.IsRunning);
         }
 
         [Test]
