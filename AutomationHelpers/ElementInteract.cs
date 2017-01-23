@@ -30,6 +30,28 @@ namespace AutomationHelpers
             }           
         }
 
+        public static void AddToSelectionElement(string elementNameOrAutomationId, AutomationElement parent)
+        {
+            try
+            {
+                AutomationElement target = ElementFinder.GetElementByNameOrAutomationId(elementNameOrAutomationId, parent);
+
+                if (target != null)
+                {
+                    ElementPatterns.GetSelectionItemPattern(target).AddToSelection();
+                }
+                else
+                {
+                    throw new ElementNotAvailableException("element with name or automationID " + elementNameOrAutomationId + " could not be found in InvokeElement");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static void SetTextValue(string elementNameOrAutomationId, AutomationElement parent, string value)
         {
             try

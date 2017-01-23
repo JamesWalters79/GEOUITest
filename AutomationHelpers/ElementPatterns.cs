@@ -42,5 +42,24 @@ namespace AutomationHelpers
                 throw;
             }
         }
+
+        public static SelectionItemPattern GetSelectionItemPattern(AutomationElement element)
+        {
+            try
+            {
+                if (element != null)
+                {
+                    SelectionItemPattern pattern;
+                    pattern = element.GetCurrentPattern(SelectionItemPattern.Pattern) as SelectionItemPattern;
+                    return pattern;
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

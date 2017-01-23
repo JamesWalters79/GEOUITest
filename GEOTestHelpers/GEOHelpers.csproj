@@ -42,6 +42,7 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NeighborPlanning.cs" />
     <Compile Include="ProblemIdentification.cs" />
     <Compile Include="GeoFile.cs" />
     <Compile Include="LogIn.cs" />

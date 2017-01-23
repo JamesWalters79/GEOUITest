@@ -23,8 +23,8 @@ namespace GEOTests
         [Test]
         public void OpenPIW()
         {
-            ProblemIdentification.Open(Technology.UMTS);
-            Assert.True(ProblemIdentification.IsVisible);
+            NeighborPlanning.Open(Technology.UMTS);
+            Assert.True(NeighborPlanning.IsVisible);
         }
     }
 }
