@@ -31,9 +31,16 @@ namespace GEOTests
 
             NeighborPlanning.SetCells(NeighborPlanning.CellSelection.Variable, NeighborPlanning.CellVariable.DocumentBounds);
 
-            NeighborPlanning.SetFrequency(NeighborPlanning.PlanType.Inter, new List<NeighborPlanning.FrequencyPair> { new NeighborPlanning.FrequencyPair("1234", "5678") } );
+            NeighborPlanning.SetFrequency(NeighborPlanning.PlanType.Inter, new List<NeighborPlanning.FrequencyPair> { new NeighborPlanning.FrequencyPair(1, 5) } );
 
-            NeighborPlanning.StartCalculation();            
-        }
+            NeighborPlanning.StartCalculation();
+
+            NeighborPlanning.AddPlanToCanvas();
+
+            NeighborPlanning.ExportPlanToCSV("planame", "exportlocation");
+
+            Assert.True(NeighborPlanning.CheckResult("expectedpath", "exportlocation"));
+
+          }
     }
 }

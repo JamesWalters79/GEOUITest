@@ -24,8 +24,7 @@ namespace AutomationHelpers
 
             return element;
         }
-
-
+        
         public static AutomationElement GetElementbyName(string name, AutomationElement rootElement = null, int waitForSeconds = 10)
         {
 
@@ -169,6 +168,49 @@ namespace AutomationHelpers
 
             return foundElement;
         }
+        
+        public static List<AutomationElement> GetAllDescendantElementsByType(ControlType controlType, AutomationElement rootElement = null, int waitForSeconds = 10)
+        {
+            Console.WriteLine("GetAllChildElementsByName " + DateTime.Now.ToLongTimeString());
+
+            List<AutomationElement> foundElements = new List<AutomationElement>();
+            int count = 0;
+            do
+            {
+                AutomationElementCollection elements;
+                if (rootElement == null)
+                {
+                    elements = AutomationElement.RootElement.FindAll(TreeScope.Descendants, Condition.TrueCondition);
+                }
+                else
+                {
+                    elements = rootElement.FindAll(TreeScope.Descendants, Condition.TrueCondition);
+                }
+
+                foreach (AutomationElement element in elements)
+                {
+                    try
+                    {
+                        if (element.Current.ControlType == controlType)
+                        {
+                            foundElements.Add(element);
+                        }
+                    }
+                    catch (System.Windows.Automation.ElementNotAvailableException)
+                    {
+                        Thread.Sleep(5000);
+                    }
+                }
+
+                Thread.Sleep(1000);
+                count++;
+
+            } while (count < waitForSeconds);
+
+            Console.WriteLine("GetAllChildElementsByName " + DateTime.Now.ToLongTimeString());
+
+            return foundElements;
+        }
 
         public static List<AutomationElement> GetAllChildElementsByName(string elementName, AutomationElement rootElement = null, int waitForSeconds = 10)
         {
@@ -213,7 +255,6 @@ namespace AutomationHelpers
             return foundElements;
         }
 
-
         public static AutomationElement GetParentAutomationElement(AutomationElement child)
         {
             Console.WriteLine("GetParentAutomationElement " + DateTime.Now.ToLongTimeString());
@@ -236,5 +277,26 @@ namespace AutomationHelpers
             }
         }
 
+        public static AutomationElement GetNextSibling(AutomationElement element)
+        {
+            Console.WriteLine("GetParentAutomationElement " + DateTime.Now.ToLongTimeString());
+
+            try
+            {
+                if (element != null)
+                {
+                    TreeWalker treeWalker = TreeWalker.ControlViewWalker;
+
+                    Console.WriteLine("GetParentAutomationElement " + DateTime.Now.ToLongTimeString());
+
+                    return treeWalker.GetNextSibling(element);
+                }
+                return null;
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
     }
 }

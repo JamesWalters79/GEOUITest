@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.UIAutomationClient, Version=12.0.20617.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\UIAComWrapper.1.1.0.14\lib\net40\Interop.UIAutomationClient.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -57,6 +65,7 @@
   <ItemGroup>
     <Compile Include="ElementPatterns.cs" />
     <Compile Include="ElementInteract.cs" />
+    <Compile Include="AssertHelper.cs" />
     <Compile Include="Launcher.cs" />
     <Compile Include="ElementFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

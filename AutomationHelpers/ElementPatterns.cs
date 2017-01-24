@@ -5,6 +5,46 @@ namespace AutomationHelpers
 {
     public class ElementPatterns
     {
+        public static TogglePattern GetTogglePattern(AutomationElement element)
+        {
+            try
+            {
+                if (element != null)
+                {
+                    TogglePattern pattern;
+                    pattern = element.GetCurrentPattern(TogglePattern.Pattern) as TogglePattern;
+                    return pattern;
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        public static ExpandCollapsePattern GetExpandPattern(AutomationElement element)
+        {
+            try
+            {
+                if (element != null)
+                {
+                    ExpandCollapsePattern pattern;
+                    pattern = element.GetCurrentPattern(ExpandCollapsePattern.Pattern) as ExpandCollapsePattern;
+                    return pattern;
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
         public static InvokePattern GetInvokePattern(AutomationElement element)
         {
             try

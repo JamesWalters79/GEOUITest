@@ -8,6 +8,135 @@ namespace AutomationHelpers
 {
     public class ElementInteract
     {
+        public static void ExpandElement(AutomationElement element)
+        {
+            try
+            {
+                AutomationElement target = element;
+
+                if (target != null)
+                {
+                    ElementPatterns.GetExpandPattern(target).Expand();
+                }
+                else
+                {
+                    throw new ElementNotAvailableException("element with name or automationID " + element.Current.Name + " could not be found in ExpandElement");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static void ExpandElement(string elementNameOrAutomationId, AutomationElement parent)
+        {
+            try
+            {
+                AutomationElement target = ElementFinder.GetElementByNameOrAutomationId(elementNameOrAutomationId, parent);
+
+                if (target != null)
+                {
+                    ElementPatterns.GetExpandPattern(target).Expand();
+                }
+                else
+                {
+                    throw new ElementNotAvailableException("element with name or automationID " + elementNameOrAutomationId + " could not be found in ExpandElement");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static void SetCheckBoxChecked(AutomationElement element, bool ischecked)
+        {
+            try
+            {
+                AutomationElement target = element;
+
+                if (target != null)
+                {
+                    TogglePattern pattern = ElementPatterns.GetTogglePattern(target);
+
+                    if (pattern.Current.ToggleState == ToggleState.On)
+                    {
+                        if (!ischecked)
+                        {
+                            ElementPatterns.GetTogglePattern(target).Toggle();
+                        }
+                    }
+
+                    if (pattern.Current.ToggleState == ToggleState.Off)
+                    {
+                        if (ischecked)
+                        {
+                            ElementPatterns.GetTogglePattern(target).Toggle();
+                        }
+                    }
+                }
+                else
+                {
+                    throw new ElementNotAvailableException("element with name or automationID " + element.Current.Name + " could not be found in ExpandElement");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static void ToggleElement(AutomationElement element)
+        {
+            try
+            {
+                AutomationElement target = element;
+
+                if (target != null)
+                {
+                    ElementPatterns.GetTogglePattern(target).Toggle();
+                }
+                else
+                {
+                    throw new ElementNotAvailableException("element with name or automationID " + element.Current.Name + " could not be found in ExpandElement");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static void ToggleElement(string elementNameOrAutomationId, AutomationElement parent)
+        {
+            try
+            {
+                AutomationElement target = ElementFinder.GetElementByNameOrAutomationId(elementNameOrAutomationId, parent);
+
+                if (target != null)
+                {
+                    ElementPatterns.GetTogglePattern(target).Toggle();
+                }
+                else
+                {
+                    throw new ElementNotAvailableException("element with name or automationID " + elementNameOrAutomationId + " could not be found in ExpandElement");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+
+
         public static void InvokeElement(string elementNameOrAutomationId, AutomationElement parent)
         {
             try
@@ -28,6 +157,29 @@ namespace AutomationHelpers
             {
                 throw;
             }           
+        }
+
+        public static void AddToSelectionElement(AutomationElement element)
+        {
+            try
+            {
+                AutomationElement target = element;
+
+                if (target != null)
+                {
+                    ElementPatterns.GetSelectionItemPattern(target).AddToSelection();
+                }
+                else
+                {
+                    throw new ElementNotAvailableException("element with name or automationID " + element.Current.AutomationId + " could not be found in InvokeElement");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         public static void AddToSelectionElement(string elementNameOrAutomationId, AutomationElement parent)
